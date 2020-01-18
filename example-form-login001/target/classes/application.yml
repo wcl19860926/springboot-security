@@ -1,6 +1,9 @@
 
 server:
   port: 8080
+  servlet:
+    session:
+      timeout: 60
 spring:
   application:
     name: spring-security-test
@@ -10,3 +13,4 @@ spring:
   thymeleaf:
     cache: false
     mode: HTML
+

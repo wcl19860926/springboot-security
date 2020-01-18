@@ -22,6 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/api/**").hasRole("USER")
                 .antMatchers("/app/api/**").permitAll()
                 .anyRequest().authenticated()
+                //successForwardUrl必须是post请求
                 .and().formLogin().successForwardUrl("/app/api/get");
     }
 
