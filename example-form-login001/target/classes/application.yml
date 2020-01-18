@@ -1,0 +1,12 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-security-test
+  # dev环境
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    mode: HTML
