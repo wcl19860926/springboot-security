@@ -10,6 +10,7 @@
     <modules>
         <module>example-form-login001</module>
         <module>security_role_right</module>
+        <module>common</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

@@ -14,6 +14,6 @@ public class CustomerLogoutSuccessHandler  implements LogoutSuccessHandler {
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         String username = ((User)authentication.getPrincipal()).getUsername();
         // 重定向到登录页
-        response.sendRedirect("/login");
+        response.sendRedirect("/index");
     }
 }

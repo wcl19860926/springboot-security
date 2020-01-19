@@ -1,5 +1,7 @@
 package com.study.config;
 
+import com.study.security.CustomerAuthenticationFailureHandler;
+import com.study.security.CustomerAuthenticationSuccessHandler;
 import com.study.service.impl.UserDetailServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/app/api/**").permitAll()
                 .anyRequest().authenticated()
                 //successForwardUrl必须是post请求
-                .and().formLogin().successForwardUrl("/app/api/get");
+                .and().formLogin()
+                .successHandler(new CustomerAuthenticationSuccessHandler())
+                .failureHandler(new CustomerAuthenticationFailureHandler())
+                //maxSessionsPreventsLogin(boolean)：是否保留已经登录的用户；为true，新用户无法登录；为 false，旧用户被踢出
+                .and().sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(false);
     }
 
     @Override
