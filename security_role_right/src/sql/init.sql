@@ -1,41 +1,71 @@
-DROP TABLE IF EXISTS `Sys_permission`;
-
-CREATE TABLE `Sys_permission` (
+CREATE TABLE `sys_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) DEFAULT NULL,
-  `description` varchar(200) DEFAULT NULL,
-  `url` varchar(200) DEFAULT NULL,
-  `pid` int(11) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `userCode` varchar(50) DEFAULT NULL,
+  `password` varchar(150) DEFAULT NULL,
+  `salt` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB ;
 
-
-INSERT INTO `Sys_permission` (`id`, `name`, `description`, `url`, `pid`)
-VALUES
-	(1,'ROLE_HOME','index','/',NULL),
-	(2,'ROLE_ADMIN','admin','/admin',NULL),
-	(3,'ROLE_USER','user','/user',NULL);
-
-/*!40000 ALTER TABLE `Sys_permission` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table Sys_permission_role
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `Sys_permission_role`;
-
-CREATE TABLE `Sys_permission_role` (
+CREATE TABLE `sys_role` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) unsigned NOT NULL,
-  `permission_id` int(11) unsigned NOT NULL,
+   `code` varchar(50) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB ;
+
+CREATE TABLE `sys_role_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `userId` int(11) unsigned NOT NULL,
+  `roleId` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `role2` (`role_id`),
-  KEY `permission` (`permission_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `idx_userId` (`userId`),
+  KEY `idx_roleId` (`roleId`)
+) ENGINE=InnoDB ;
+
+CREATE TABLE `sys_permission` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(30) DEFAULT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB ;
+CREATE TABLE `sys_permission_role` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `roleId` int(11) unsigned NOT NULL,
+  `permissionId` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_role2` (`roleId`),
+  KEY `idx_permission` (`permissionId`)
+) ENGINE=InnoDB ;
 
 
-INSERT INTO `Sys_permission_role` (`id`, `role_id`, `permission_id`)
+
+INSERT INTO `sys_user` (`id`, `username`, `password`)
+VALUES
+	(1,'admin','6d789d4353c72e4f625d21c6b7ac2982'),
+	(2,'user','36f1cab655c5252fc4f163a1409500b8');
+
+
+INSERT INTO `sys_role` (`id`, `name` ,`code`)
+VALUES
+	(2,'ROLE_USER','ROLE_USER' ),
+	(3,'ROLE_ADMIN','ROLE_ADMIN');
+
+INSERT INTO `sys_role_user` (`id`, `userId`, `roleId`)
+VALUES
+	(6,1,3),
+	(7,2,2);
+
+
+INSERT INTO `sys_permission` (`id`, `code` ,`name`, `url`, `description` )
+VALUES
+	(1,'ROLE_HOME','首页权限','/',NULL),
+	(2,'ROLE_ADMIN','管理员权限','/admin',NULL),
+	(3,'ROLE_USER','用户权限','/user',NULL);
+
+INSERT INTO `sys_permission_role` (`id`, `roleId`, `permissionId`)
 VALUES
 	(10,2,1),
 	(11,2,3),
@@ -47,46 +77,9 @@ VALUES
 
 
 
-CREATE TABLE `Sys_Role` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-INSERT INTO `Sys_Role` (`id`, `name`)
-VALUES
-	(2,'ROLE_USER'),
-	(3,'ROLE_ADMIN');
-
-
-CREATE TABLE `Sys_Role_User` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `Sys_User_id` int(11) unsigned NOT NULL,
-  `Sys_Role_id` int(11) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user` (`Sys_User_id`),
-  KEY `role` (`Sys_Role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
-INSERT INTO `Sys_Role_User` (`id`, `Sys_User_id`, `Sys_Role_id`)
-VALUES
-	(6,1,3),
-	(7,2,2);
-
-
-CREATE TABLE `Sys_User` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(200) DEFAULT NULL,
-  `password` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
-INSERT INTO `Sys_User` (`id`, `username`, `password`)
-VALUES
-	(1,'admin','6d789d4353c72e4f625d21c6b7ac2982'),
-	(2,'user','36f1cab655c5252fc4f163a1409500b8');

@@ -70,6 +70,12 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
         </dependency>
+        <dependency>
+            <groupId>org.study</groupId>
+            <artifactId>common</artifactId>
+            <version>${com.study.common.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>
