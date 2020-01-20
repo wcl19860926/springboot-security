@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="security_role_right" />
-        <module name="security-customer002" />
+        <module name="security-session-share" />
         <module name="example-form-login001" />
       </profile>
     </annotationProcessing>

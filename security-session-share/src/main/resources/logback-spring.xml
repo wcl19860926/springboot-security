@@ -150,14 +150,9 @@
     </logger>
 
     <!-- root级别   DEBUG -->
-    <root >
+    <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>
-
-    <logger name="org.springframework.security" level="DEBUG" additivity="false">
-        <appender-ref ref="STDOUT"/>
-    </logger>
-
 
     <logger name="druid.sql.Connection" level="ERROR"/>
 

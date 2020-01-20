@@ -1,0 +1,20 @@
+
+server:
+  port: 9000
+  servlet:
+    session:
+      timeout: 60
+spring:
+  application:
+    name: spring-security-test
+  # dev环境
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+    mode: HTML
+  session:
+    store-type: redis
+    #60秒过期
+    timeout: 60
+
