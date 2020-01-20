@@ -4,7 +4,7 @@
 #ignore idea files
 /.idea/
 *.iml
-/logs/
+*/logs/
 
 # ignore eclipse files
 .project
