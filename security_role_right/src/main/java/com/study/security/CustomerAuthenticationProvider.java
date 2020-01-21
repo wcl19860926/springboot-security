@@ -35,9 +35,9 @@ public class CustomerAuthenticationProvider  extends  AbstractUserDetailsAuthent
 
     @Override
     protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-         prepareTimingAttackProtection();
+
         try {
-            UserDetails loadedUser = this.getUserDetailsService().loadUserByUsername(username);
+            UserDetails loadedUser = userDetailsService.loadUserByUsername(username);
             if (loadedUser == null) {
                 throw new InternalAuthenticationServiceException(
                         "UserDetailsService returned null, which is an interface contract violation");
@@ -45,7 +45,7 @@ public class CustomerAuthenticationProvider  extends  AbstractUserDetailsAuthent
             return loadedUser;
         }
         catch (UsernameNotFoundException ex) {
-            mitigateAgainstTimingAttack(authentication);
+
             throw ex;
         }
         catch (InternalAuthenticationServiceException ex) {
