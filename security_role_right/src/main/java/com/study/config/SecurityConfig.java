@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.addFilterBefore(getCustomerAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/").and()
-                .formLogin().loginPage("/userlogin.html").defaultSuccessUrl("/").failureUrl("/login-error").permitAll().and()
+                .formLogin().loginPage("/userlogin.html").defaultSuccessUrl("/").permitAll().failureUrl("/login-error").permitAll().and()
                 .authorizeRequests()
                 .antMatchers("/sys/user/login").permitAll()
                 .antMatchers("/error").permitAll()

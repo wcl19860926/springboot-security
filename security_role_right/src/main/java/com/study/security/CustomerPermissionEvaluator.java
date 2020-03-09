@@ -3,6 +3,7 @@ package com.study.security;
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
  *
  * 原文链接：https://blog.csdn.net/cloume/article/details/83790111
  */
+@Component
 public class CustomerPermissionEvaluator  implements PermissionEvaluator {
 
     @Override
