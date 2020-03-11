@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="example-form-login001" />
         <module name="common" />
+        <module name="euraker" />
         <module name="security_role_right" />
         <module name="sms-login" />
         <module name="cas-client" />
