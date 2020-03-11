@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan(basePackages = {"com.study.mapper"})
 @SpringBootApplication
-public class RoleRightSecurityApplication {
+public class SmsLoginSecurityApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(RoleRightSecurityApplication.class, args);
+        SpringApplication.run(SmsLoginSecurityApplication.class, args);
     }
 }

@@ -1,22 +1,16 @@
 package com.study.security.filter;
 
-import com.study.enitity.SysUser;
 import com.study.security.CustomerAuthenticationToken;
 import com.study.security.handle.CustomerAuthenticationFailureHandler;
 import com.study.security.handle.CustomerAuthenticationSuccessHandler;
-import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationServiceException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.servlet.FilterChain;
+
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -40,14 +34,6 @@ public class CustomerAuthenticationProcessingFilter extends AbstractAuthenticati
     }
 
 
-    @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        System.out.println(((HttpServletRequest)req).getRequestURL());
-        if("/sys/user/login".equals(((HttpServletRequest)req).getRequestURL())){
-           System.out.println(((HttpServletRequest)req).getRequestURL());
-        }
-        super.doFilter(req, res, chain);
-    }
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)

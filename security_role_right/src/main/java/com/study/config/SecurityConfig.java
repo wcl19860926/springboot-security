@@ -6,7 +6,6 @@ import com.study.security.handle.CustomerAuthenticationFailureHandler;
 import com.study.security.handle.CustomerAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -27,13 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.addFilterBefore(getCustomerAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/").and()
-                .formLogin().loginPage("/userlogin.html").defaultSuccessUrl("/").permitAll().failureUrl("/login-error").permitAll().and()
+                .logout().logoutUrl("/logout").permitAll().and()
+                .formLogin().loginPage("/userlogin.html").permitAll().and()
                 .authorizeRequests()
-                .antMatchers("/sys/user/login").permitAll()
-                .antMatchers("/error").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasRole("USER")
                 .anyRequest().authenticated().and().csrf().disable();
 
 

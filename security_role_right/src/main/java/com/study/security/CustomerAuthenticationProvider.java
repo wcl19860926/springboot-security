@@ -1,60 +1,49 @@
 package com.study.security;
 
-import org.springframework.context.MessageSource;
-import org.springframework.context.MessageSourceAware;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.InternalAuthenticationServiceException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 
 
-public class CustomerAuthenticationProvider  extends  AbstractUserDetailsAuthenticationProvider   {
+public class CustomerAuthenticationProvider implements AuthenticationProvider {
 
     private PasswordEncoder passwordEncoder;
 
-    private UserDetailsService   userDetailsService;
+
+    private UserDetailsService userDetailsService;
 
     public CustomerAuthenticationProvider(PasswordEncoder passwordEncoder, UserDetailsService userDetailsService) {
         this.passwordEncoder = passwordEncoder;
         this.userDetailsService = userDetailsService;
     }
 
-    @Override
-    protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-
-    }
 
 
 
     @Override
-    protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        CustomerAuthenticationToken token = (CustomerAuthenticationToken) authentication;
         try {
-            UserDetails loadedUser = userDetailsService.loadUserByUsername(username);
-            if (loadedUser == null) {
-                throw new InternalAuthenticationServiceException(
-                        "UserDetailsService returned null, which is an interface contract violation");
+            UserDetails user = userDetailsService.loadUserByUsername((String) token.getPrincipal());
+            if (user != null) {
+                CustomerAuthenticationToken customerAuthenticationToken = new CustomerAuthenticationToken(user.getAuthorities(), user.getUsername(), user.getPassword());
+                customerAuthenticationToken.setDetails(user.getAuthorities());
+                return customerAuthenticationToken;
+            } else {
+                throw new BadCredentialsException("bad userName  passowrd");
             }
-            return loadedUser;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch (UsernameNotFoundException ex) {
+        throw new BadCredentialsException("bad userName  passowrd");
 
-            throw ex;
-        }
-        catch (InternalAuthenticationServiceException ex) {
-            throw ex;
-        }
-        catch (Exception ex) {
-            throw new InternalAuthenticationServiceException(ex.getMessage(), ex);
-        }
     }
+
+
 
     @Override
     public boolean supports(Class<?> authentication) {
