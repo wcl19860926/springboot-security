@@ -15,7 +15,7 @@
         <module>cluster-session</module>
         <module>cas-client</module>
         <module>sms-login</module>
-        <module>euraker</module>
+        <module>springboot-oauth2</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
