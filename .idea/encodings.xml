@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cas-client" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cas-client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cas-client/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cluster-session" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cluster-session/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cluster-session/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-form-login001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-form-login001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/example-form-login001/src/main/resources" charset="UTF-8" />
@@ -18,6 +16,10 @@
     <file url="file://$PROJECT_DIR$/security-session-share/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security-session-share/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security002" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security003/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security003/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_role_right" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_role_right/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_role_right/src/main/resources" charset="UTF-8" />
@@ -32,7 +34,5 @@
     <file url="file://$PROJECT_DIR$/springboot-oauth2/euraker-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-oauth2/euraker-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-oauth2/resource-server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-oauth2/resource-server/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-oauth2/resource-server/src/main/resources" charset="UTF-8" />
   </component>
 </project>
