@@ -16,6 +16,7 @@
         <module>cas-client</module>
         <module>sms-login</module>
         <module>springboot-oauth2</module>
+        <module>security002</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

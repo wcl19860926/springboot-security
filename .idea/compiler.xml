@@ -6,16 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="example-form-login001" />
-        <module name="resource-server" />
+        <module name="auth-service" />
+        <module name="cas-client" />
+        <module name="cluster-session" />
         <module name="common" />
         <module name="euraker-server" />
+        <module name="example-form-login001" />
+        <module name="resource-server" />
+        <module name="security-session-share" />
+        <module name="security002" />
         <module name="security_role_right" />
         <module name="sms-login" />
-        <module name="cas-client" />
-        <module name="security-session-share" />
-        <module name="auth-service" />
-        <module name="cluster-session" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

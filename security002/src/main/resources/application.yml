@@ -1,6 +1,9 @@
 
 server:
-  port: 9600
+  port: 8080
+  servlet:
+    session:
+      timeout: 60
 spring:
   application:
     name: spring-security-test
@@ -10,4 +13,6 @@ spring:
   thymeleaf:
     cache: false
     mode: HTML
-
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
