@@ -19,6 +19,7 @@
         <module>security002</module>
         <module>security003</module>
         <module>security_customer_login</module>
+        <module>security005_right</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

@@ -16,6 +16,7 @@
         <module name="security-session-share" />
         <module name="security002" />
         <module name="security003" />
+        <module name="security005_right" />
         <module name="security_customer_login" />
         <module name="security_role_right" />
         <module name="sms-login" />
@@ -32,6 +33,7 @@
       <module name="security-session-share" target="1.8" />
       <module name="security002" target="1.8" />
       <module name="security003" target="1.8" />
+      <module name="security005_right" target="1.8" />
       <module name="security_customer_login" target="1.8" />
       <module name="security_role_right" target="1.8" />
       <module name="sms-login" target="1.8" />
