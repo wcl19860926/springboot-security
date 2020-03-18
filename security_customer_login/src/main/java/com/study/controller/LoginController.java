@@ -6,6 +6,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -53,7 +54,6 @@ public class LoginController {
      * @return
      * hasPermission  需要自定义    PermissionEvaluator
      * org.springframework.security.access.PermissionEvaluator
-     * org.springframework.security.access.expression.method.MethodSecurityExpressionRoot.hasPermission方法
      */
     @RequestMapping("/has")
     @ResponseBody
@@ -62,5 +62,10 @@ public class LoginController {
         return "如果你看见这句话，hasPermission";
     }
 
+
+    @RequestMapping(value = "/login/error" ,method = {RequestMethod.POST ,RequestMethod.GET})
+    public String loginErr() {
+        return "/login/error.html";
+    }
 
 }
