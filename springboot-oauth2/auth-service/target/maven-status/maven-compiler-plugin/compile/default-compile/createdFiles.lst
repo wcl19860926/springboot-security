@@ -1,0 +1,4 @@
+com\study\oauth2\auth\config\OAuth2AuthorizationConfig.class
+com\study\oauth2\auth\config\WebSecurityConfig.class
+com\study\oauth2\auth\Oauth2AuthServerApplication.class
+com\study\oauth2\auth\security\UserServiceDetail.class

@@ -6,20 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="auth-service" />
-        <module name="cas-client" />
-        <module name="cluster-session" />
-        <module name="common" />
         <module name="euraker-server" />
-        <module name="example-form-login001" />
-        <module name="resource-server" />
-        <module name="security-session-share" />
-        <module name="security002" />
-        <module name="security003" />
-        <module name="security005_right" />
         <module name="security_customer_login" />
+        <module name="example-form-login001" />
+        <module name="cas-client" />
+        <module name="security-session-share" />
         <module name="security_role_right" />
+        <module name="security005_right" />
         <module name="sms-login" />
+        <module name="auth-service" />
+        <module name="cluster-session" />
+        <module name="security006_login_manager" />
+        <module name="security003" />
+        <module name="security002" />
+        <module name="resource-server" />
+        <module name="common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="security002" target="1.8" />
       <module name="security003" target="1.8" />
       <module name="security005_right" target="1.8" />
+      <module name="security006_login_manager" target="1.8" />
       <module name="security_customer_login" target="1.8" />
       <module name="security_role_right" target="1.8" />
       <module name="sms-login" target="1.8" />
