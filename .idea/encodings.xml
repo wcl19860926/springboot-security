@@ -22,6 +22,7 @@
     <file url="file://$PROJECT_DIR$/security003/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security003/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security005_right" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security007" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_customer_login" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_role_right" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security_role_right/src/main/java" charset="UTF-8" />
@@ -29,6 +30,10 @@
     <file url="file://$PROJECT_DIR$/sms-login" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sms-login/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sms-login/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_oauth2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_oauth2/eureka_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_cloud_oauth2/oauth2_server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_securiy_oauth_001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-oauth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-oauth2/auth-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-oauth2/auth-service/src/main/java" charset="UTF-8" />

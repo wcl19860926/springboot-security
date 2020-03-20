@@ -35,7 +35,7 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        //ClientDetailsServiceConfigurer配置了客户端的一些基本信息
+        //ClientDetailsServiceConfigure配置了客户端的一些基本信息
         clients.inMemory() //将客户端的信息存储在内存中
                 .withClient("browser") //创建了一个client名为browser的客户端
                 .authorizedGrantTypes("refresh_token", "password")//配置验证类型

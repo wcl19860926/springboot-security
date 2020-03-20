@@ -1,0 +1,12 @@
+【OAuth2.0】认识和使用OAuth2.0附OAuth实例
+
+
+
+本项目demo  参考地址
+https://blog.csdn.net/z57354658/article/details/82108263?
+本项目参考demo 地址
+https://gitee.com/jason0808/springcloud_oauth2
+
+参考文献
+https://blog.csdn.net/iceiceicpc/article/details/75012385
+

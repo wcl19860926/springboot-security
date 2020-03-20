@@ -20,6 +20,9 @@
         <module>security003</module>
         <module>security_customer_login</module>
         <module>security005_right</module>
+        <module>security007</module>
+        <module>spring_securiy_oauth_001</module>
+        <module>spring_cloud_oauth2</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
