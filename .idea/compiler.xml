@@ -18,11 +18,15 @@
         <module name="security002" />
         <module name="security003" />
         <module name="security005_right" />
+        <module name="security006_login_manager" />
         <module name="security007" />
         <module name="security_customer_login" />
         <module name="security_role_right" />
         <module name="sms-login" />
         <module name="spring_securiy_oauth_001" />
+		 <module name="spring-boot-security"  />
+      <module name="spring_cloud_oauth2" />
+	   <module name="springboot-oauth2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,7 +35,6 @@
       <module name="cluster-session" target="1.8" />
       <module name="common" target="1.8" />
       <module name="euraker-server" target="1.8" />
-      <module name="eureka_server" target="1.8" />
       <module name="example-form-login001" target="1.8" />
       <module name="oauth2_server" target="1.8" />
       <module name="resource-server" target="1.8" />
@@ -39,6 +42,7 @@
       <module name="security002" target="1.8" />
       <module name="security003" target="1.8" />
       <module name="security005_right" target="1.8" />
+      <module name="security006_login_manager" target="1.8" />
       <module name="security007" target="1.8" />
       <module name="security_customer_login" target="1.8" />
       <module name="security_role_right" target="1.8" />
@@ -47,7 +51,6 @@
       <module name="spring_cloud_oauth2" target="1.8" />
       <module name="spring_securiy_oauth_001" target="1.8" />
       <module name="springboot-oauth2" target="1.8" />
-      <module name="springboot-security" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
